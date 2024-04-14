@@ -15,17 +15,37 @@ class Calculadora {
             SUM: 4
         };
         this.opAtual = this.op.NOP;
+        this.visorLigado = true;
+    }
+
+    trocarSinal() {
+        if (this.nrVisor !== '0') { // Certifique-se de que o número no visor não é zero
+            // Verifica se o número no visor é negativo
+            if (this.nrVisor.charAt(0) === '-') {
+                this.nrVisor = this.nrVisor.slice(1); // Remove o sinal negativo
+            } else {
+                this.nrVisor = '-' + this.nrVisor; // Adiciona um sinal negativo
+            }
+        }
     }
 
     mostrarVisor() {
+        if (!this.visorLigado) {
+            this.nrVisor = '0'; // Reinicia o número quando o visor é desligado
+            return '';
+        }
         if (this.estadoErro) {
-            this.nrVisor = '0';
+            this.nrVisor = '0'; // Reinicia o número se houver um erro
             return 'ERRO!';
         }
         if (this.nrVisor.length == 0) {
-            this.nrVisor = '0';
+            this.nrVisor = '0'; // Garante que o número seja sempre visível
         }
         return this.nrVisor;
+    }
+    
+    ligarDesligarVisor() {
+        this.visorLigado = !this.visorLigado;
     }
 
     // recebe dígito
@@ -139,6 +159,9 @@ class Calculadora {
         On_off(){}       
     }
 
+    
+
+
 // ==================================================================
 //  RESPOSTAS A EVENTOS DO HTML
 // ==================================================================
@@ -196,9 +219,19 @@ let teclaCLM = () => {
     calculadora.teclaCLM();
 }
 
+let On_off = () => {
+    calculadora.ligarDesligarVisor();
+    atualizaVisor();
+}
+
+let teclaMaisMenos = () => {
+    calculadora.trocarSinal();
+    atualizaVisor();
+}
+
+
 // ========================================================
 //  INÍCIO DO PROCESSAMENTO
 // ========================================================
 
 let calculadora = new Calculadora();
-
