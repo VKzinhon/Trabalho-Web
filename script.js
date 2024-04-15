@@ -187,13 +187,10 @@ class Calculadora {
         if (this.estadoErro) return;
         this.memoria = 0;
     }
-        //Desliga e liga a calculadora 
-        On_off(){}       
+      
     }
 
     
-
-
 // ==================================================================
 //  RESPOSTAS A EVENTOS DO HTML
 // ==================================================================
