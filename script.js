@@ -30,6 +30,13 @@ class Calculadora {
         }
     }
 
+    porcentagem() {
+        if (this.estadoErro) return;
+        let numero = parseFloat(this.nrVisor);
+        let resultado = numero / 100;
+        this.nrVisor = String(resultado);
+    }
+
     mostrarVisor() {
         if (!this.visorLigado) {
             return ''; // Retorna visor vazio se estiver desligado
@@ -187,10 +194,13 @@ class Calculadora {
         if (this.estadoErro) return;
         this.memoria = 0;
     }
-      
+        //Desliga e liga a calculadora 
+        On_off(){}       
     }
 
     
+
+
 // ==================================================================
 //  RESPOSTAS A EVENTOS DO HTML
 // ==================================================================
@@ -258,6 +268,10 @@ let teclaMaisMenos = () => {
     atualizaVisor();
 }
 
+let teclaPorcentagem = () => {
+    calculadora.porcentagem();
+    atualizaVisor();
+}
 
 // ========================================================
 //  INÍCIO DO PROCESSAMENTO
