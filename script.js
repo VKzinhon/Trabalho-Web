@@ -16,6 +16,7 @@ class Calculadora {
         };
         this.opAtual = this.op.NOP;
         this.visorLigado = true;
+        this.memoriaArmazenada = false;
     }
 
     trocarSinal() {
@@ -31,22 +32,52 @@ class Calculadora {
 
     mostrarVisor() {
         if (!this.visorLigado) {
-            this.nrVisor = '0'; // Reinicia o número quando o visor é desligado
-            return '';
+            return ''; // Retorna visor vazio se estiver desligado
         }
         if (this.estadoErro) {
-            this.nrVisor = '0'; // Reinicia o número se houver um erro
-            return 'ERRO!';
+            return 'ERRO!'; // Retorna mensagem de erro se houver erro
         }
-        if (this.nrVisor.length == 0) {
-            this.nrVisor = '0'; // Garante que o número seja sempre visível
+        let visor = this.nrVisor;
+        if (this.memoriaArmazenada) {
+            visor += ' M'; // Adiciona indicador de memória armazenada
         }
-        return this.nrVisor;
+        // Adiciona indicador de operação aritmética em curso
+        switch (this.opAtual) {
+            case this.op.DIV:
+                visor += ' /';
+                break;
+            case this.op.MULT:
+                visor += ' x';
+                break;
+            case this.op.SUB:
+                visor += ' -';
+                break;
+            case this.op.SUM:
+                visor += ' +';
+                break;
+            default:
+                break;
+        }
+        // Limita o visor a 10 caracteres
+        if (visor.length > 10) {
+            visor = visor.substring(0, 10);
+        }
+        return visor;
     }
     
     ligarDesligarVisor() {
         this.visorLigado = !this.visorLigado;
+        if (!this.visorLigado) {
+            this.nrVisor = '0';
+            this.ptDecimal = false;
+            this.iniciouSegundo = false;
+            this.opAtual = this.op.NOP;
+            this.memTemp = '';
+            this.estadoErro = false;
+        }
     }
+
+
 
     // recebe dígito
     digito(dig) {
@@ -121,6 +152,7 @@ class Calculadora {
         this.memTemp = '';
         this.nrVisor = String(resultado).slice(0, 10);
     }
+
 
     // Limpa dados (exceto memória)
     teclaC() {
