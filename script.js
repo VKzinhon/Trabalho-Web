@@ -194,7 +194,7 @@ class Calculadora {
         if (this.estadoErro) return;
         this.memoria = 0;
     }   
-      
+
     }
 
     
@@ -267,7 +267,7 @@ let teclaMaisMenos = () => {
     atualizaVisor();
 }
 
-let teclaPorcentagem = () => {
+let porcentagem = () => {
     calculadora.porcentagem();
     atualizaVisor();
 }
