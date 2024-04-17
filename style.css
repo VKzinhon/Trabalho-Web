@@ -8,7 +8,8 @@ body {
 
 .container {
     background-color: rgba(238, 225, 225, 0.863);
-    width: 450px;
+    width: 550px;
+    height: 655px;
     margin: auto;
     margin-top: 30px;
     border-radius: 15px;
@@ -16,8 +17,11 @@ body {
 }
 
 
+
 .container2 {
-    border-radius: 15px;
+    width: 550px;
+    height: 630px;
+    border-radius: 10px;
     box-shadow: inset -6px -6px 6px 6px rgb(0, 0, 0, 0.5);
     padding-top: 20px;
     padding-bottom: 10px;
@@ -25,7 +29,7 @@ body {
 
 
 .visor {
-    width: 75%;
+    width: 80%;
     text-align: right;
     margin: auto;
     border: 8px solid rgb(70, 130, 180);
@@ -44,7 +48,8 @@ body {
 
 .container-teclas {
     width: 85%;
-    padding: 5px;
+    height: 490px;
+    padding: 5px ;
     margin: auto;
     margin-top: 20px;
     background-color: white;
@@ -57,6 +62,7 @@ body {
 
 
 .tecla {
+    width: 80%;
     padding: 8px;
     background-color: white;
     color: steelblue;
@@ -69,6 +75,7 @@ body {
 
 
 .tecla-esp {
+    
     padding: 8px;
     background-color: steelblue;
     color: white;
