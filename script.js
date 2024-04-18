@@ -88,6 +88,13 @@ class Calculadora {
         }
     }
 
+    quadrado() {
+        if (this.estadoErro) return;
+        let numero = parseFloat(this.nrVisor);
+        let resultado = numero * numero;
+        this.nrVisor = String(resultado).slice(0, 10); // Limita o resultado a 10 caracteres no visor
+    }
+
 
 
     // recebe dígito
@@ -273,6 +280,11 @@ let teclaMaisMenos = () => {
 
 let porcentagem = () => {
     calculadora.porcentagem();
+    atualizaVisor();
+}
+
+let teclaQuadrado = () => {
+    calculadora.quadrado();
     atualizaVisor();
 }
 
