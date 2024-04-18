@@ -32,8 +32,9 @@ class Calculadora {
 
     porcentagem() {
         if (this.estadoErro) return;
-        let numero = parseFloat(this.nrVisor);
-        let resultado = numero / 100;
+        let numero1 = parseFloat(this.memTemp);
+        let numero2 = parseFloat(this.nrVisor);
+        let resultado = numero1 / 100 * numero2;
         this.nrVisor = String(resultado);
     }
 
