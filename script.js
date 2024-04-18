@@ -45,26 +45,29 @@ class Calculadora {
         if (this.estadoErro) {
             return 'ERRO!'; // Retorna mensagem de erro se houver erro
         }
-        let visor = this.nrVisor;
+        let visor = '';
+        if (this.memTemp !== '') {
+            visor += this.memTemp; // Mostra o número armazenado em memTemp
+            switch (this.opAtual) {
+                case this.op.DIV:
+                    visor += ' /';
+                    break;
+                case this.op.MULT:
+                    visor += ' x';
+                    break;
+                case this.op.SUB:
+                    visor += ' -';
+                    break;
+                case this.op.SUM:
+                    visor += ' +';
+                    break;
+                default:
+                    break;
+            }
+        }
+        visor += this.nrVisor;
         if (this.memoriaArmazenada) {
             visor += ' M'; // Adiciona indicador de memória armazenada
-        }
-        // Adiciona indicador de operação aritmética em curso
-        switch (this.opAtual) {
-            case this.op.DIV:
-                visor += ' /';
-                break;
-            case this.op.MULT:
-                visor += ' x';
-                break;
-            case this.op.SUB:
-                visor += ' -';
-                break;
-            case this.op.SUM:
-                visor += ' +';
-                break;
-            default:
-                break;
         }
         // Limita o visor a 10 caracteres
         if (visor.length > 10) {
