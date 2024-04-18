@@ -10,7 +10,7 @@ body {
 .container {
     background-color: rgb(255, 254, 254);
     width: 550px;
-    height: 655px;
+    height: 695px;
     margin: auto;
     margin-top: 30px;
     border-radius: 15px;
@@ -21,10 +21,10 @@ body {
 
 .container2 {
     width: 550px;
-    height: 630px;
+    height: 668px;
     border-radius: 10px;
     box-shadow: inset -6px -6px 6px 6px rgb(0, 0, 0, 0.5);
-    padding-top: 20px;
+    padding-top: 19px;
     padding-bottom: 10px;
 }
 
@@ -49,7 +49,7 @@ body {
 
 .container-teclas {
     width: 85%;
-    height: 490px;
+    height: 530px;
     padding: 5px ;
     margin: auto;
     margin-top: 20px;
@@ -63,7 +63,7 @@ body {
 
 
 .tecla {
-    width:70%;
+    width:71%;
     padding: 8px;
     background-color: white;
     color: steelblue;
