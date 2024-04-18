@@ -8,7 +8,7 @@ body {
 
 
 .container {
-    background-color: rgba(238, 225, 225, 0.863);
+    background-color: rgb(255, 254, 254);
     width: 550px;
     height: 655px;
     margin: auto;
@@ -35,7 +35,7 @@ body {
     margin: auto;
     border: 8px solid rgb(70, 130, 180);
     border-radius: 15px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: rgba(8, 248, 248, 0.4);
     font-size: 3em;
     font-family: 'Courier New', Courier, monospace;
@@ -53,7 +53,7 @@ body {
     padding: 5px ;
     margin: auto;
     margin-top: 20px;
-    background-color: white;
+    background-color: rgb(214, 211, 211);
     margin-bottom: 20px;
     border: 6px solid gray;
     border-radius: 15px;
@@ -80,7 +80,7 @@ body {
     padding: 8px;
     background-color: steelblue;
     color: white;
-    margin: 10px;
+    margin: 9px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2em;
     border-radius: 10px;
@@ -102,5 +102,5 @@ body {
     padding-bottom: 6px;
     padding-left: 10px;
     padding-right: 6px;
-    box-shadow: 1px 1px 2px 2px rgb(0, 0, 0, 1);
+    box-shadow: 1px 1px 2px 2px rgb(0, 0, 0);
 }
