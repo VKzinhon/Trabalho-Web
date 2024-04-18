@@ -88,6 +88,13 @@ class Calculadora {
         }
     }
 
+    quadrado() {
+        if (this.estadoErro) return;
+        let numero = parseFloat(this.nrVisor);
+        let resultado = numero * numero;
+        this.nrVisor = String(resultado).slice(0, 10); // Limita o resultado a 10 caracteres no visor
+    }
+
 
 
     // recebe dígito
@@ -199,6 +206,19 @@ class Calculadora {
         this.memoria = 0;
     }   
 
+    raizQuadrada() {
+        if (this.estadoErro) return;
+        let numero = parseFloat(this.nrVisor);
+        if (numero < 0) {
+            this.estadoErro = true;
+            return;
+        }
+        let resultado = Math.sqrt(numero);
+        this.nrVisor = String(resultado).slice(0, 10);
+    }
+
+
+
     }
 
     
@@ -276,6 +296,16 @@ let porcentagem = () => {
     atualizaVisor();
 }
 
+let teclaQuadrado = () => {
+    calculadora.quadrado();
+    atualizaVisor();
+}
+
+
+let raizQuadrada = () => {
+    calculadora.raizQuadrada();
+    atualizaVisor();
+}
 // ========================================================
 //  INÍCIO DO PROCESSAMENTO
 // ========================================================
